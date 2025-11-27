@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title>e-Vote Campus</title>
+{% endblock %}
+
+{% block navbar %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <span id="logo-text">e-Vote</span>
+    </a>
+    <div>
+      <a href="{% url 'signup' %}" class="btn btn-light me-2">Signup</a>
+      <a href="{% url 'login' %}" class="btn btn-outline-light">Login</a>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+<!-- Carousel -->
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'image/vote1.jpg' %}" class="d-block w-100 carousel-img" alt="vote1">
+      <!-- <div class="carousel-caption d-none d-md-block">
+        <h1 id="display"></h1>
+        <p>Our Vote, Our Voice — let's Make the Right Choice</p>
+        <a href="{% url 'signup' %}" class="btn btn-primary">Signup</a>
+        <a href="{% url 'login' %}" class="btn btn-light">Login</a>
+      </div> -->
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'image/vote2.jpg' %}" class="d-block w-100 carousel-img" alt="vote2">
+      <!-- <div class="carousel-caption d-none d-md-block">
+        <h1 id="display"></h1>
+        <p>Our Vote, Our Voice — let's Make the Right Choice</p>
+        <a href="{% url 'signup' %}" class="btn btn-primary">Signup</a>
+        <a href="{% url 'login' %}" class="btn btn-light">Login</a>
+      </div> -->
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'image/vote3.jpg' %}" class="d-block w-100 carousel-img" alt="vote3">
+      <!-- <div class="carousel-caption d-none d-md-block">
+        <h1 id="display"></h1>
+        <p>Our Vote, Our Voice — let's Make the Right Choice</p>
+        <a href="{% url 'signup' %}" class="btn btn-primary">Signup</a>
+        <a href="{% url 'login' %}" class="btn btn-light">Login</a>
+      </div> -->
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+{% endblock %}
+

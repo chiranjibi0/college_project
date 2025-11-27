@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block main_content %}
+ {% block navbar1 %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <span id="logo-text">e-Vote</span>
+    </a>
+    
+</nav>
+
+{% endblock %}
+<body>
+    <table class="table table-striped table-hover table-bordered text-center align-middle shadow-sm">
+            <h1 class="text-center mt-3"> Voter List</h1>
+       <thead>
+        <tr>
+            <th>S.N</th>
+            <th>Voter Name</th>
+            <th>Voter age</th>
+            <th>Voter Number</th>
+        </tr>
+        </thead>
+        <tr>
+
+            {% for voter in voters %}
+            <td>{{voter.id}}</td>
+            <td>{{voter.voter_name}}</td>
+            <td>{{voter.voter_age}}</td>
+            <td>{{voter.voter_id_number}}</td>
+            
+        </tr>
+         {% endfor %}
+    </table>
+   
+    {% endblock %}

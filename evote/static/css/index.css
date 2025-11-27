@@ -1,0 +1,75 @@
+/* Navbar overlay */
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden !important; /* avoid unwanted horizontal scroll */
+}
+
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand img {
+  height: 60px; /* fixed size instead of vh for responsiveness */
+  width: auto;
+  margin-right: 8px;
+  border-radius: 12px;
+}
+
+#logo-text {
+  text-decoration: none;
+  font-size: xx-large;
+}
+
+#logo-text::first-letter {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  color: rgb(121, 244, 121);
+  font-size: 40px;
+}
+
+.main{
+  margin-bottom: 20px;
+}
+
+/* style.css - custom styles for e-Vote design */
+
+/* logo styles */
+#logo-text, .logo-e, .logo-rest {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+.logo-e { color: #2575fc; text-shadow: 1px 1px 3px rgba(0,0,0,0.15); }
+.logo-rest { color: #117ecb; }
+
+/* main text */
+.main-text { padding: 3rem 0; }
+
+/* form container used in login/signup */
+.form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+  max-width: 700px;
+  width: 100%;
+}
+
+/* small responsive tweak for carousel images */
+.carousel-img { height: 50vh; object-fit: cover; }
+
+/* custom buttons */
+.btn-custom {
+  background: #117ecb;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 20px;
+}
