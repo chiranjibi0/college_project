@@ -8,13 +8,14 @@ class Party(models.Model):
 
     def __str__(self):
         return self.party_name
+    
 class Candidate(models.Model):
     candidate_name=models.CharField(max_length=100)
     candidate_age=models.IntegerField()
     candidate_image=models.FileField(upload_to='static/uploads',null=True)
     candidate_number=models.BigIntegerField()
     candidate_slogan=models.TextField()
-    vote=models.IntegerField(default=0)
+    voteCount=models.IntegerField(default=0)
     party=models.ForeignKey(Party,on_delete=models.CASCADE)
 
     def __str__(self):
@@ -38,20 +39,16 @@ class Election(models.Model):
 
     def __str__(self):
         return self.notes
+    
 class Vote(models.Model):
-    voter = models.ForeignKey( Voter, on_delete=models.CASCADE
-    )
-    
-    candidate = models.ForeignKey(
-        Candidate,
-        on_delete=models.CASCADE,
-        related_name='votes_received'
-    )
-    
+    voter = models.ForeignKey(Voter, on_delete=models.CASCADE)
+    candidateId = models.ForeignKey(Candidate, on_delete=models.CASCADE, default=None, null=True,blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         unique_together = ('voter',)
+
         
     def __str__(self):
-        return f"{self.voter.voter_name} voted for {self.candidate.candidate_name}"
+        return f"{self.voter.voter_name} voted for {self.candidateId.candidate_name}"
+

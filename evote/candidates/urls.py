@@ -8,5 +8,6 @@ urlpatterns=[
     path('show_voters/',views.show_voters ,name='show_voters'),
     path('show_election/',show_election),
     path('show_result',show_result),
-    path('vote_candidate/<int:candidate_id>/', views.vote_candidate, name='vote_candidate'),
+    path('vote_candidate/<int:candidate_id>/', views.vote_candidate, name='vote_candidate')
+
 ]
